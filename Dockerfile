@@ -16,6 +16,6 @@ WORKDIR /ansible
 VOLUME [ "/ansible" ]
 
 # Install ansible
-ARG ANSIBLE_VERSION=2.5
+ARG ANSIBLE_VERSION=2.9.12
 
 RUN pip install ansible==$ANSIBLE_VERSION
