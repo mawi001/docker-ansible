@@ -174,3 +174,4 @@ You are invited to contribute new features, fixes, or updates, large or small; w
 
 Before you start to code, we recommend discussing your plans through a [GitHub issue](https://github.com/intelygenz/ansible-image/issues), especially for more ambitious contributions.
 This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
+
