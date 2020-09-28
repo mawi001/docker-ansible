@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.6-alpine
 
 # Install new packages
 RUN apk add --update build-base python3-dev py-pip jpeg-dev zlib-dev libffi-dev openssl-dev git openssh-client sshpass \
