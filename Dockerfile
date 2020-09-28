@@ -1,14 +1,9 @@
-FROM python:3.6-alpine
+FROM python:3.8-alpine
 
 # Install new packages
 RUN apk add --update build-base python3-dev py-pip jpeg-dev zlib-dev libffi-dev openssl-dev git openssh-client sshpass \
-zip jq netcat-openbsd curl openldap-clients
+zip jq netcat-openbsd curl openldap-clients py3-setuptools openldap-dev libldap libssl1.1 libsasl
 
-# Upgrade pip
-RUN pip install --upgrade pip
-
-# Install pip libs
-RUN pip install pipenv hvac ansible-modules-hashivault
 
 # Install Vault
 RUN curl https://releases.hashicorp.com/vault/1.5.3/vault_1.5.3_linux_amd64.zip -o /tmp/vault.zip && \
@@ -28,4 +23,9 @@ VOLUME [ "/ansible" ]
 # Install ansible
 ARG ANSIBLE_VERSION=2.9.12
 
-RUN pip install ansible==$ANSIBLE_VERSION
+# Upgrade pip
+RUN pip3 install --upgrade pip
+
+# Install pip libs
+RUN pip3 install ansible==$ANSIBLE_VERSION python-ldap pipenv hvac ansible-modules-hashivault
+
